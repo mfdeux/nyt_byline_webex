@@ -1,0 +1,27 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "NYT Author Byline",
+  "description": "Add byline to new NYTimes homepage",
+  "homepage_url": "https://github.com/mfdeux/nyt_byline_webex",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*.nytimes.com/*",
+        "https://*.nytimes.com/*"
+      ],
+      "css": [
+        "resources/css/styles.css"
+      ],
+      "js": [
+        "resources/js/async-await.js",
+        "resources/js/content.js"
+      ]
+    }
+  ]
+}
